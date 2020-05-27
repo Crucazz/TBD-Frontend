@@ -15,6 +15,11 @@ Vue.use(VueRouter)
     name: 'Institucion',    
     component: () => import(/* webpackChunkName: "institucion" */ '../views/Institucion.vue')
   },
+    {
+    path: '/api/v1/volunteer',
+    name: 'volunteer',    
+    component: () => import(/* webpackChunkName: "volunteer" */ '../views/Voluntario.vue')
+  },
   {
     path: '/about',
     name: 'About',
