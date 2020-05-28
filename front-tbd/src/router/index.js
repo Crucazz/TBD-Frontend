@@ -11,12 +11,12 @@ Vue.use(VueRouter)
     component: Home
   },
   {
-    path: '/institucion',
+    path: '/api/v1/institutions',
     name: 'Institucion',    
     component: () => import(/* webpackChunkName: "institucion" */ '../views/Institucion.vue')
   },
   {
-    path: '/institucion/:id',
+    path: '/api/v1/institutions/:id',
     name: 'InstitucionPorID',    
     component: () => import(/* webpackChunkName: "institucionporid" */ '../views/InstitucionPorID.vue')
   },

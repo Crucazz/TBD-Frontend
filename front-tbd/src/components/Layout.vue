@@ -15,7 +15,7 @@
             </v-list-item-content>
           </v-list-item>
         </router-link>
-        <router-link to="/institucion">
+        <router-link to="/api/v1/institutions">
           <v-list-item link>
             <v-list-item-action>
               <v-icon>mdi-contact-mail</v-icon>

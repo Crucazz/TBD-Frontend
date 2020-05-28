@@ -48,8 +48,7 @@
             align: 'start',
             value: 'id',
           },
-          { text: 'Nombre', value: 'nombre' },
-          { text: 'Descripcion', value: 'descrip' },
+          { text: 'Nombre', value: 'name' },
           { text: 'Acciones', value: 'actions', sortable: false },
         ],
         }
@@ -58,7 +57,7 @@
         //Función asíncrona para consultar los datos
         getData: async function(){
             try {
-                let response = await this.$http.get('/institucion');
+                let response = await this.$http.get('/api/v1/institutions');
                 this.items  = response.data;
                 
             } catch (error) {
