@@ -48,9 +48,9 @@
                 console.log('error', error);
             }
         },
-        goToInstitucion(id) {
-          this.$router.push({name:'InstitucionPorID',params:{id:id}})
-        }
+
+        
+
     },
     //Función que se ejecuta al cargar el componente
     created:function(){
