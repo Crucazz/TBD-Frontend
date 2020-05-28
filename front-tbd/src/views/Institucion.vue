@@ -2,19 +2,33 @@
   <v-data-table
     :headers="headers"
     :items="items"
-    :items-per-page="5"
-    item-key="name"
+    sort-by="nombre"
     class="elevation-1"
-    :footer-props="{
-      showFirstLastPage: true,
-      firstIcon: 'mdi-arrow-collapse-left',
-      lastIcon: 'mdi-arrow-collapse-right',
-      prevIcon: 'mdi-minus',
-      nextIcon: 'mdi-plus'
-    }"
-  ></v-data-table>
+  >
 
+    <template v-slot:top>
+      <v-toolbar flat color="white">
+        <v-toolbar-title>Instituciones</v-toolbar-title>
+        <v-divider
+          class="mx-4"
+          inset
+          vertical
+        ></v-divider>
+        <v-spacer></v-spacer>        
+    </template>
+
+
+    <template v-slot:item.actions="{ item }">
+      <v-icon
+        small
+        class="mr-2"
+        @click="goToInstitucion(item.id)"
+      >
+        mdi-pencil
+      </v-icon>          
+  </v-data-table>
 </template>
+
 
 
 
