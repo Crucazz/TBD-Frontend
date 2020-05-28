@@ -8,7 +8,7 @@
 
     <template v-slot:top>
       <v-toolbar flat color="white">
-        <v-toolbar-title>Habilidades</v-toolbar-title>
+        <v-toolbar-title>Voluntarios</v-toolbar-title>
         <v-divider
           class="mx-4"
           inset
@@ -19,13 +19,13 @@
     </template>
 
 
-    <template v-slot:item.actions="{item}">
+    <template v-slot:item.actions="{ item }">
       <v-icon
         small
         class="mr-2"
-        @click="goToVoluntariosPorHabilidad(item)"
+        @click="goToVoluntario(item)"
       >
-        voluntarios
+        info
       </v-icon>
     </template>          
   </v-data-table>
@@ -57,16 +57,19 @@
         //Función asíncrona para consultar los datos
         getData: async function(){
             try {
-                let response = await this.$http.get('/api/v1/abilities');
+                let response = await this.$http.get(this.$route.path);
                 this.items  = response.data;
                 
             } catch (error) {
                 console.log('error', error);
             }
         },
-        goToVoluntariosPorHabilidad(item) {
-          this.$router.push({name:'VoluntariosPorHabilidad', params:{id:item.id}});
+        goToVoluntario(item) {
+          this.$router.push({name:'VoluntarioPorID',params:{id:item.id}})
         },
+        newVoluntario() {
+          this.$router.push({name:'newVolunteer'})
+        }
     },
     //Función que se ejecuta al cargar el componente
     created:function(){
