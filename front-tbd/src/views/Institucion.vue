@@ -25,7 +25,7 @@
         class="mr-2"
         @click="goToInstitucion(item)"
       >
-        mdi-pencil
+        info
       </v-icon>
     </template>          
   </v-data-table>

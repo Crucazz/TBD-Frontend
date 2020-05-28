@@ -21,9 +21,19 @@ Vue.use(VueRouter)
     component: () => import(/* webpackChunkName: "institucionporid" */ '../views/InstitucionPorID.vue')
   },
   {
+    path: '/api/v1/volunteer/:id',
+    name: 'VoluntarioPorID',    
+    component: () => import(/* webpackChunkName: "voluntarioporid" */ '../views/VoluntarioPorID.vue')
+  },
+  {
     path: '/api/v1/volunteer',
     name: 'volunteer',    
     component: () => import(/* webpackChunkName: "volunteer" */ '../views/Voluntario.vue')
+  },
+  {
+    path: '/api/v1/new/volunteer',
+    name: 'newVolunteer',    
+    component: () => import(/* webpackChunkName: "newvolunteer" */ '../views/NewVoluntario.vue')
   },
   {
     path: '/about',

@@ -2,19 +2,35 @@
   <v-data-table
     :headers="headers"
     :items="items"
-    :items-per-page="5"
-    item-key="name"
+    sort-by="nombre"
     class="elevation-1"
-    :footer-props="{
-      showFirstLastPage: true,
-      firstIcon: 'mdi-arrow-collapse-left',
-      lastIcon: 'mdi-arrow-collapse-right',
-      prevIcon: 'mdi-minus',
-      nextIcon: 'mdi-plus'
-    }"
-  ></v-data-table>
+  >
 
+    <template v-slot:top>
+      <v-toolbar flat color="white">
+        <v-toolbar-title>Voluntarios</v-toolbar-title>
+        <v-divider
+          class="mx-4"
+          inset
+          vertical
+        ></v-divider>
+        <v-spacer></v-spacer>
+      </v-toolbar>      
+    </template>
+
+
+    <template v-slot:item.actions="{ item }">
+      <v-icon
+        small
+        class="mr-2"
+        @click="goToVoluntario(item)"
+      >
+        info
+      </v-icon>
+    </template>          
+  </v-data-table>
 </template>
+
 
 
 
@@ -33,6 +49,7 @@
             value: 'id',
           },
           { text: 'Nombre', value: 'name' },
+          { text: 'Acciones', value: 'actions', sortable: false },
         ],
         }
     },
@@ -47,9 +64,12 @@
                 console.log('error', error);
             }
         },
-
-        
-
+        goToVoluntario(item) {
+          this.$router.push({name:'VoluntarioPorID',params:{id:item.id}})
+        },
+        newVoluntario() {
+          this.$router.push({name:'newVolunteer'})
+        }
     },
     //Función que se ejecuta al cargar el componente
     created:function(){
