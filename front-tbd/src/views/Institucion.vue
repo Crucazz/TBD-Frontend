@@ -14,7 +14,8 @@
           inset
           vertical
         ></v-divider>
-        <v-spacer></v-spacer>        
+        <v-spacer></v-spacer>
+      </v-toolbar>        
     </template>
 
 
@@ -22,10 +23,11 @@
       <v-icon
         small
         class="mr-2"
-        @click="goToInstitucion(item.id)"
+        @click="goToInstitucion(item)"
       >
         mdi-pencil
-      </v-icon>          
+      </v-icon>
+    </template>          
   </v-data-table>
 </template>
 
@@ -48,6 +50,7 @@
           },
           { text: 'Nombre', value: 'nombre' },
           { text: 'Descripcion', value: 'descrip' },
+          { text: 'Acciones', value: 'actions', sortable: false },
         ],
         }
     },
@@ -62,8 +65,8 @@
                 console.log('error', error);
             }
         },
-        goToInstitucion(id) {
-          this.$router.push({name:'InstitucionPorID',params:{id:id}})
+        goToInstitucion(item) {
+          this.$router.push({name:'InstitucionPorID',params:{id:item.id}})
         }
     },
     //Función que se ejecuta al cargar el componente

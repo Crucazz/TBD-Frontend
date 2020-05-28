@@ -1,61 +1,40 @@
 <template>
-  <v-data-table
-    :headers="headers"
-    :items="items"
-    :items-per-page="5"
-    item-key="name"
-    class="elevation-1"
-    :footer-props="{
-      showFirstLastPage: true,
-      firstIcon: 'mdi-arrow-collapse-left',
-      lastIcon: 'mdi-arrow-collapse-right',
-      prevIcon: 'mdi-minus',
-      nextIcon: 'mdi-plus'
-    }"
-  ></v-data-table>
-
+    <div>
+    <h1>{{this.$route.path}}</h1>
+    <ul class="item-list">
+      <li v-for="(item, index) in items" :key="index">
+       <!-- <img :src="'https://loremflickr.com/160/120/dog?lock='+i"/>-->
+        {{item}}
+      </li>
+    </ul>
+    <div v-if="items.length==0" class="empty-list">
+      <em>No se han cargado los datos</em>
+    </div>
+  </div>
 </template>
-
-
-
-
 <script>
-  export default {  
-
+export default {
+    //Función que contiene los datos del componente
     data(){
         return{
             //Lista de ítems a mostrar
-            items:[],
-            headers: [
-          {
-            text: 'ID',
-            align: 'start',
-            value: 'id',
-          },
-          { text: 'Nombre', value: 'nombre' },
-          { text: 'Descripcion', value: 'descrip' },
-        ],
+            items:[]
         }
     },
     methods:{
         //Función asíncrona para consultar los datos
         getData: async function(){
             try {
-                let response = await this.$http.get('/institucion');
+                let response = await this.$http.get(this.$route.path);
                 this.items  = response.data;
-                
             } catch (error) {
                 console.log('error', error);
             }
-        },
-
-        
-
+        }
     },
     //Función que se ejecuta al cargar el componente
     created:function(){
         this.getData();
     }
-
-  }
+}
 </script>
