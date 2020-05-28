@@ -35,7 +35,7 @@ export default {
                 this.message = 'Debes ingresar un nombre'
             }
             try {
-                var result = await this.$http.post('/api/v1/volunteer', this.newVoluntario);
+                var result = await this.$http.post('/api/v1/volunteers', this.newVoluntario);
                 let voluntario = result.data;
                 this.message = `Se creó un nuevo voluntario con id: ${voluntario.id}`;
                 this.newVoluntario = {};

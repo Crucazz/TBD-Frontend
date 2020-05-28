@@ -10,6 +10,9 @@
     <div v-if="items.length==0" class="empty-list">
       <em>No se han cargado los datos</em>
     </div>
+    <div>
+        <button type="button" @click="deleteVoluntario()">Eliminar</button>
+    </div>
   </div>
 </template>
 <script>
@@ -29,6 +32,12 @@ export default {
                 this.items  = response.data;
             } catch (error) {
                 console.log('error', error);
+            }
+        },
+        deleteVoluntario(){
+            let decision = confirm('Are you sure you want to delete this item?');
+            if (decision==true){
+                this.$http.delete(this.$route.path);
             }
         }
     },
