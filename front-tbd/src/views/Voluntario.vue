@@ -32,8 +32,7 @@
             align: 'start',
             value: 'id',
           },
-          { text: 'Nombre', value: 'nombre' },
-          { text: 'Descripcion', value: 'descrip' },
+          { text: 'Nombre', value: 'name' },
         ],
         }
     },
@@ -41,16 +40,16 @@
         //Función asíncrona para consultar los datos
         getData: async function(){
             try {
-                let response = await this.$http.get('/institucion');
+                let response = await this.$http.get('/api/v1/volunteer');
                 this.items  = response.data;
                 
             } catch (error) {
                 console.log('error', error);
             }
         },
-        goToInstitucion(id) {
-          this.$router.push({name:'InstitucionPorID',params:{id:id}})
-        }
+
+        
+
     },
     //Función que se ejecuta al cargar el componente
     created:function(){
