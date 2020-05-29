@@ -8,7 +8,7 @@
 
     <template v-slot:top>
       <v-toolbar flat color="white">
-        <v-toolbar-title>Voluntarios</v-toolbar-title>
+        <v-toolbar-title>Voluntarios de la emergencia</v-toolbar-title>
         <v-divider
           class="mx-4"
           inset
@@ -19,7 +19,7 @@
     </template>
 
 
-  <!--  <template v-slot:item.actions="{ item }">
+    <!-- <template v-slot:item.actions="{ item }"> 
       <v-icon
         small
         class="mr-2"
@@ -27,9 +27,10 @@
       >
         info
       </v-icon>
-    </template>       -->
+    </template>         --> 
   </v-data-table>
 </template>
+
 
 <script>
   export default {  
@@ -40,7 +41,7 @@
             items:[],
             headers: [
           { text: 'Nombre',align: 'start', value: 'name' },
-          { text: 'Acciones', value: 'actions', sortable: false },
+          //{ text: 'Acciones', value: 'actions', sortable: false },
         ],
         }
     },
@@ -58,9 +59,6 @@
         goToVoluntario(item) {
           this.$router.push({name:'VoluntarioPorID',params:{id:item.id}})
         },
-        newVoluntario() {
-          this.$router.push({name:'newVolunteer'})
-        }
     },
     //Función que se ejecuta al cargar el componente
     created:function(){

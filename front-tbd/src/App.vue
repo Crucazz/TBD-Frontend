@@ -22,7 +22,7 @@
     </v-content>
 
     <v-footer
-      color="indigo"
+      color="green lighten-1"
       app
     >
       <span class="white--text">&copy; 2020 Taller de base de datos</span>

@@ -25,6 +25,16 @@
             </v-list-item-content>
           </v-list-item>    
         </router-link>
+        <router-link to="/api/v1/emergencies">
+          <v-list-item link>
+            <v-list-item-action>
+              <v-icon>mdi-contact-mail</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>Emergencias</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>    
+        </router-link>
         <router-link to="/api/v1/volunteers">
           <v-list-item link>
             <v-list-item-action>
@@ -55,15 +65,26 @@
             </v-list-item-content>
           </v-list-item>    
         </router-link>
+        <router-link to="/api/v1/new/emergencies">
+          <v-list-item link>
+            <v-list-item-action>
+              <v-icon>mdi-contact-mail</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>Agregar Emergencia</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>    
+        </router-link>
       </v-list>
     </v-navigation-drawer>
 
     <v-app-bar
       app
-      color="indigo"
+      color="green lighten-1"
       dark
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>      
+      <v-toolbar-title>Inserte titulo del grupo de voluntarios</v-toolbar-title>
     </v-app-bar>
 
 

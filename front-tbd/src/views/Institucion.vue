@@ -25,7 +25,7 @@
         class="mr-2"
         @click="goToInstitucion(item)"
       >
-        info
+        Revisar emerfencias
       </v-icon>
     </template>          
   </v-data-table>
@@ -44,11 +44,10 @@
             items:[],
             headers: [
           {
-            text: 'ID',
+            text: 'Nombre',
             align: 'start',
-            value: 'id',
-          },
-          { text: 'Nombre', value: 'name' },
+            value: 'name',
+          },          
           { text: 'Acciones', value: 'actions', sortable: false },
         ],
         }

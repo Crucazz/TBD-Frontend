@@ -2,13 +2,18 @@
   <v-container>
     <v-row class="text-center">      
       <v-col class="mb-4">
-        <h1 class="display-2 font-weight-bold mb-3">
-          Bienvenido al Himalaya
-        </h1>
-        <img alt="Logo inicial" width="500" height="300" src="../assets/bienvenidos.png">    
-        <h1 class="display-2 font-weight-bold mb-3">
-          ¿Helado?
-        </h1>
+        <v-carousel cycle height="400">
+          <v-carousel-item
+            v-for="(item,i) in items"
+            :key="i"
+            :src="item.src"
+            reverse-transition="fade-transition"
+            transition="fade-transition"            
+          ></v-carousel-item>
+        </v-carousel>
+        
+          Platorma de ayuda, si quieres aportar te puede unir
+          puedes cambiar los coleres con esta dir: https://vuetifyjs.com/en/styles/colors/
       </v-col>
     </v-row>
   </v-container>
@@ -18,7 +23,27 @@
   export default {
     name: 'HelloWorld',
 
-    data: () => ({
-    }),
+    data () {
+      return {
+        items: [
+          {
+            src: 'https://richmondvale.org/images/what-we-do/releaf-aid.jpg',
+          },
+          {
+            src: 'https://www.atentos.cl/wp-content/uploads/2017/01/FEUCM-SE-MOVILIZA-POR-INCENDIOS-FORESTALES-2.jpg',
+          },
+          {
+            src: 'https://portal.andina.pe/EDPfotografia3/Thumbnail/2017/03/29/000413355W.jpg',
+          },
+          {
+            src: 'https://www.chillanonline.cl/V5/wp-content/uploads/2020/04/ae124dcb-554c-48fe-9a04-c086912900fd.jpg',
+          },
+
+          {
+            src: 'https://www.tuexperto.com/wp-content/uploads/2017/02/huaycos.jpg',
+          },
+        ],
+      }
+    }
   }
 </script>

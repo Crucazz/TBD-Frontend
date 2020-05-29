@@ -1,29 +1,56 @@
 <template>
-<div class="container">
-    <h1>Agregar un voluntario</h1>
-    <form>
-        <div>
-            <label for="name">Nombre</label>
-        <input type="text" id="name" v-model="newVoluntario.name">
-        </div>
-        <div>
-            <button type="button" @click="send">Crear</button>
-        </div>
-        <div class="info">
-            <h2>Objeto</h2>
-            <code>{{newVoluntario}}</code>
-            <p class="message">
-                {{message}}
-            </p>
-        </div>
-    </form>
 
-</div>
+    
+  <v-form
+    ref="form"
+    v-model="valid"
+    lazy-validation
+  >
+    <v-text-field
+      v-model="newVoluntario.name"      
+      label="Nombre"
+      required
+    ></v-text-field>
+
+
+    <v-btn
+      :disabled="!valid"
+      color="success"
+      class="mr-4"
+      @click="send"
+    >
+      Crear 
+    </v-btn>
+
+    <v-btn
+      color="error"
+      class="mr-4"
+      @click="reset"
+    >
+      Limpiar
+    </v-btn>
+    <v-alert
+      :value="alert"
+      color="pink"
+      dark
+      border="top"
+      transition="scale-transition"
+    >
+        <p class="message">
+        {{message}}
+        </p>
+    </v-alert>
+  </v-form>
+
 </template>
+
+
 <script>
 export default {
     data(){
         return{
+            alert: false,
+            valid: true,
             message:'',
             newVoluntario:{}
         }
@@ -37,13 +64,19 @@ export default {
             try {
                 var result = await this.$http.post('/api/v1/volunteers', this.newVoluntario);
                 let voluntario = result.data;
-                this.message = `Se creó un nuevo voluntario con id: ${voluntario.id}`;
+                this.message = `Voluntario ${voluntario.name} Creado `;
                 this.newVoluntario = {};
             } catch (error) {
                 console.log('error', error)
-                this.message = 'Ocurrió un error'
-            }     
-        }
+                this.message = 'Ocurrió un error, NO se creo Voluntario'
+            }
+            this.alert =!this.alert;
+        },
+        reset () {
+            if(this.alert == true)
+                this.alert =!this.alert;
+        this.$refs.form.reset()
+      },
     }
 }
 

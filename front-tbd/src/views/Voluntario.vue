@@ -43,12 +43,7 @@
             //Lista de ítems a mostrar
             items:[],
             headers: [
-          {
-            text: 'ID',
-            align: 'start',
-            value: 'id',
-          },
-          { text: 'Nombre', value: 'name' },
+          { text: 'Nombre',align: 'start', value: 'name' },
           { text: 'Acciones', value: 'actions', sortable: false },
         ],
         }
