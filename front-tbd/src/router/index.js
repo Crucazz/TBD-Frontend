@@ -62,6 +62,11 @@ Vue.use(VueRouter)
     component: () => import(/* webpackChunkName: "newvolunteer" */ '../views/NewEmergencia.vue')
   },
   {
+    path: '/api/v1/tasks',
+    name: 'detailEmergencies',    
+    component: () => import(/* webpackChunkName: "detailEmergencies" */ '../views/DetallesEmergencia.vue')
+  },
+  {
     path: '/about',
     name: 'About',
     // route level code-splitting

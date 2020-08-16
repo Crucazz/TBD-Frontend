@@ -75,6 +75,16 @@
             </v-list-item-content>
           </v-list-item>    
         </router-link>
+        <router-link to="/api/v1/tasks">
+          <v-list-item link>
+            <v-list-item-action>
+              <v-icon>mdi-contact-mail</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>Detalles emergencias</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>    
+        </router-link>
       </v-list>
     </v-navigation-drawer>
 
