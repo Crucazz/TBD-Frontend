@@ -12,8 +12,7 @@
           ></v-carousel-item>
         </v-carousel>
         
-          Platorma de ayuda, si quieres aportar te puede unir
-          puedes cambiar los coleres con esta dir: https://vuetifyjs.com/en/styles/colors/
+          Platorma de voluntariado para diversas emergencias, en distintas zonas de Chile
       </v-col>
     </v-row>
   </v-container>

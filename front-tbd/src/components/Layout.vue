@@ -84,7 +84,7 @@
       dark
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>      
-      <v-toolbar-title>Inserte titulo del grupo de voluntarios</v-toolbar-title>
+      <v-toolbar-title>Ayuda en emergencias, Ayuda a Chile</v-toolbar-title>
     </v-app-bar>
 
 

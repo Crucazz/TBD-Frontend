@@ -47,8 +47,10 @@
 
 <script>
 export default {
+
     data(){
         return{
+          //Lista de variables a utilizar
             alert: false,
             valid: true,
             message:'',
@@ -56,6 +58,7 @@ export default {
         }
     },
     methods:{
+        //Funcion asincrona para enviar informacion
         send:async function(){
             this.message = '';
             if (this.newVoluntario.name == ''){
@@ -72,6 +75,7 @@ export default {
             }
             this.alert =!this.alert;
         },
+        //Funcion para resetear formulario
         reset () {
             if(this.alert == true)
                 this.alert =!this.alert;
