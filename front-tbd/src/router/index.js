@@ -31,6 +31,16 @@ Vue.use(VueRouter)
     component: () => import(/* webpackChunkName: "voluntariosporhabilidad" */ '../views/VoluntariosPorHabilidad.vue')
   },
   {
+    path: '/api/v1/search/volunteers/',
+    name: 'BuscarVoluntarios',    
+    component: () => import(/* webpackChunkName: "voluntariospornombrebuscar" */ '../views/VoluntariosPorNombreBuscar.vue')
+  },
+  {
+    path: '/api/v1/volunteers/byName/:name',
+    name: 'VoluntariosPorNombre',    
+    component: () => import(/* webpackChunkName: "voluntariospornombre" */ '../views/VoluntariosPorNombre.vue')
+  },
+  {
     path: '/api/v1/volunteers/byEmergency/:id',
 
     name: 'VoluntariosPorEmergencia',    
