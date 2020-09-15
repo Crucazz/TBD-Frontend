@@ -23,7 +23,7 @@
       <v-icon
         small
         class="mr-2"
-        @click="goToVoluntario(item)"
+        @click="goToHabilidad(item)"
       >
         habilidades
       </v-icon>
@@ -68,8 +68,8 @@
                 console.log('error', error);
             }
         },
-        goToVoluntario(item) {
-          this.$router.push({name:'VoluntarioPorID',params:{id:item.id}});
+        goToHabilidad(item) {
+          this.$router.push({name:'HabilidadPorRut',params:{rut:item.rut}});
         },
     },
     //Función que se ejecuta al cargar el componente

@@ -14,57 +14,8 @@
               <v-list-item-title>Inicio</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-        </router-link>
-        <router-link to="/api/v1/institutions">
-          <v-list-item link>
-            <v-list-item-action>
-              <v-icon>mdi-contact-mail</v-icon>
-            </v-list-item-action>
-            <v-list-item-content>
-              <v-list-item-title>Instituciones</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>    
-        </router-link>
-        <router-link to="/api/v1/emergencies">
-          <v-list-item link>
-            <v-list-item-action>
-              <v-icon>mdi-contact-mail</v-icon>
-            </v-list-item-action>
-            <v-list-item-content>
-              <v-list-item-title>Emergencias</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>    
-        </router-link>
-        <router-link to="/api/v1/volunteers">
-          <v-list-item link>
-            <v-list-item-action>
-              <v-icon>mdi-contact-mail</v-icon>
-            </v-list-item-action>
-            <v-list-item-content>
-              <v-list-item-title>Voluntarios</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>    
-        </router-link>
-        <router-link to="/api/v1/abilities">
-          <v-list-item link>
-            <v-list-item-action>
-              <v-icon>mdi-contact-mail</v-icon>
-            </v-list-item-action>
-            <v-list-item-content>
-              <v-list-item-title>Habilidades</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>    
-        </router-link>
-        <router-link to="/api/v1/new/volunteer">
-          <v-list-item link>
-            <v-list-item-action>
-              <v-icon>mdi-contact-mail</v-icon>
-            </v-list-item-action>
-            <v-list-item-content>
-              <v-list-item-title>Agregar Voluntario</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>    
-        </router-link>
+        </router-link>      
+
         <router-link to="/api/v1/search/volunteers">
           <v-list-item link>
             <v-list-item-action>
@@ -73,28 +24,9 @@
             <v-list-item-content>
               <v-list-item-title>Buscar Voluntario</v-list-item-title>
             </v-list-item-content>
-          </v-list-item>    
+          </v-list-item>            
         </router-link>
-        <router-link to="/api/v1/new/emergencies">
-          <v-list-item link>
-            <v-list-item-action>
-              <v-icon>mdi-contact-mail</v-icon>
-            </v-list-item-action>
-            <v-list-item-content>
-              <v-list-item-title>Agregar Emergencia</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>    
-        </router-link>
-        <router-link to="/api/v1/tasks">
-          <v-list-item link>
-            <v-list-item-action>
-              <v-icon>mdi-contact-mail</v-icon>
-            </v-list-item-action>
-            <v-list-item-content>
-              <v-list-item-title>Detalles emergencias</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>    
-        </router-link>
+        
       </v-list>
     </v-navigation-drawer>
 
