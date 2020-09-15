@@ -61,6 +61,7 @@
                 for (i = 0; i < this.items.length; i++){
                   rut = this.items[i].rut % 3
                   this.items[i].bd = rut;
+                  this.items[i].name = this.items[i].name.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
                 }
                 
             } catch (error) {
