@@ -12,6 +12,12 @@
       required
     ></v-text-field>
 
+    <v-text-field
+      v-model="newVoluntario.rut"      
+      label="RUT"
+      required
+    ></v-text-field>
+
 
     <v-btn
       :disabled="!valid"
@@ -63,6 +69,9 @@ export default {
             this.message = '';
             if (this.newVoluntario.name == ''){
                 this.message = 'Debes ingresar un nombre'
+            }
+            if (this.newVoluntario.rut == ''){
+                this.message = 'Debes ingresar un RUT'
             }
             try {
                 var result = await this.$http.post('/api/v1/volunteers', this.newVoluntario);

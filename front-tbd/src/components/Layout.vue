@@ -16,6 +16,18 @@
           </v-list-item>
         </router-link>      
 
+
+        <router-link to="/api/v1/new/volunteer">
+          <v-list-item link>
+            <v-list-item-action>
+              <v-icon>mdi-contact-mail</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>Crear Voluntario</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>            
+        </router-link>
+
         <router-link to="/api/v1/search/volunteers">
           <v-list-item link>
             <v-list-item-action>
